@@ -1,6 +1,19 @@
 const farmAnimals = 'cow horse sheep pig chicken';
+const [moo, neigh, baa, oink, cluck] = farmAnimals.split(" ");
+
+const [bessie, , dolly, babe, little] = farmAnimals.split(" ");
+
+// Destructuring for three traditional animal colors
+const [blackAndWhite, , black, pink] = farmAnimals.split(" ");
 
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const [red, orange, yellow, green, blue, indigo, violet] = colors;
+
+// Destructuring `colors` for six rainbow color initials (skipping indigo)
+const [r, o, y, g, b, , v] = colors;
+
+// Assigning indigo separately using `indg`
+const [, , , , , indg] = colors;
 
 const muppet = {
   muppetName: 'Miss Piggy',
@@ -9,6 +22,7 @@ const muppet = {
   job: 'Cast member of The Muppet Show',
   partner: 'Kermit'
 };
+const { muppetName, color, song, job, partner } = muppet;
 
 const nestedMuppet = {
   nestedName: 'Kermit',
@@ -25,6 +39,13 @@ const nestedMuppet = {
   nestedPartner: 'Miss Piggy'
 };
 
+const {
+  album: {
+    theMuppetMovie: { song2, song4 },
+  },
+  nestedJob,
+  nestedPartner,
+} = nestedMuppet;
 // Strings
 
 // 1. Use destructuring to assign appropriate variables based on the sounds animals make.
